@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación Graduación 2025</title>
+  <link rel="stylesheet" href="comitea.css" /> <!-- Puedes usar estilo interno si prefieres -->
+</head>
+<body>
+
+  <!-- PORTADA con video fondo -->
+  <section class="portada">
+    <video autoplay muted loop playsinline class="video-fondo">
+      <source src="tu-video.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+    <div class="capa-negra">
+      <h1>Graduación 2025</h1>
+      <div id="contador"></div>
+      <p class="descripcion">📍 Salón Diamante, 20 de junio de 2025, 7:00 PM</p>
+    </div>
+  </section>
+
+  <!-- BARRA DE NAVEGACIÓN (NO FIJA) -->
+  <nav class="barra-navegacion">
+    <ul>
+      <li><a href="#fotos">Fotos</a></li>
+      <li><a href="#invitacion">Invitación</a></li>
+      <li><a href="#direccion">Dirección</a></li>
+      <li><a href="#vestimenta">Vestimenta</a></li>
+      <li><a href="#instagram">Instagram</a></li>
+    </ul>
+  </nav>
+
+  <!-- COLLAGE PANORÁMICO INFINITO -->
+  <section id="fotos" class="collage">
+    <div class="carrusel">
+      <img src="resources\collage.png" alt="Collage de fotos" />
+      <img src="resources\collage.png" alt="Collage duplicado" />
+    </div>
+  </section>
+
+  <!-- INVITACIÓN CON TEXTURA Y EFECTO DE INCLINACIÓN -->
+  <section id="invitacion" class="invitacion">
+    <div class="fondo-textura">
+      <div class="carta-invitacion">
+        <img src="invitacion.jpg" alt="Invitación" />
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECCIÓN EN GOOGLE MAPS -->
+  <section id="direccion" class="direccion">
+    <!-- Pegas aquí el iframe que te da Google Maps -->
+    <iframe src="TU_IFRAME_DE_GOOGLE_MAPS" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- CÓDIGO DE VESTIMENTA -->
+  <section id="vestimenta" class="vestimenta">
+    <div class="opcion">
+      <img src="formal-hombres.jpg" alt="Hombres" />
+      <p>Formal para caballeros</p>
+    </div>
+    <div class="opcion">
+      <img src="formal-mujeres.jpg" alt="Mujeres" />
+      <p>Formal para damas</p>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section id="instagram" class="instagram">
+    <a href="https://www.instagram.com/tu_usuario" target="_blank">
+      <img src="instagram-logo.png" alt="Instagram" />
+    </a>
+    <p>@tu_usuario</p>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <p>Con mucho cariño, generación 2025 🎓</p>
+  </footer>
+
+  <!-- JS PARA CONTADOR -->
+<script>
+  const eventoFecha = new Date("2025-06-06T19:00:00-07:00");
+  const contador = document.getElementById("contador");
+
+  function actualizarContador() {
+    const ahora = new Date();
+    const diferencia = eventoFecha - ahora;
+
+    if (diferencia <= 0) {
+      contador.textContent = "🎓 ¡Es el gran día!";
+      return;
+    }
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+    const segundos = Math.floor((diferencia / 1000) % 60);
+
+    contador.textContent = `Faltan ${dias} días, ${horas}h ${minutos}m ${segundos}s 🎉`;
+  }
+
+  actualizarContador(); // Mostrar inmediatamente
+  setInterval(actualizarContador, 1000); // Actualizar cada segundo
+</script>
+
+</body>
+</html>

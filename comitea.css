@@ -1,0 +1,146 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  background: #111;
+  overflow-x: hidden;
+}
+
+/* PORTADA */
+.portada {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.capa-negra {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Capa semi-transparente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.capa-negra h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#contador {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  font-size: 1.2rem;
+}
+
+/* NAVEGACIÓN */
+.barra-navegacion {
+  background: #222;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.barra-navegacion ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.barra-navegacion a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.barra-navegacion a:hover {
+  color: #ffd700;
+}
+
+/* COLLAGE PANORÁMICO */
+.collage {
+  overflow: hidden;
+  background: #000;
+  height: 384px;
+  position: relative;
+}
+
+.carrusel {
+  display: flex;
+  animation: deslizar 30s linear infinite;
+}
+
+.carrusel img {
+  height: 100%;
+  width: auto;
+}
+
+/* Animación infinita */
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#contador {
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  margin-top: 0.5rem;
+  z-index: 10;
+  position: relative;
+}
+
+/* INVITACIÓN */
+.fondo-textura {
+  background-image: url('fondo-madera.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.carta-invitacion {
+  transition: transform 0.3s ease;
+}
+
+.carta-invitacion img {
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Inclinación con scroll */
+.invita
