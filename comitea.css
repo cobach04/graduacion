@@ -100,10 +100,10 @@ body, html {
 }
 
 .carrusel img {
-  height: 384px; 
-  width: auto; /* mantiene proporción real */
+  height: 384px; /* o el alto que prefieras */
+  width: auto; /* Mantiene la proporción real */
   flex-shrink: 0;
-  image-rendering: auto; /* para evitar pixelado */
+  image-rendering: auto; /* Para evitar pixelación si es posible */
 }
 
 /* Animación infinita */
