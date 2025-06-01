@@ -86,17 +86,18 @@ body, html {
 
 /* COLLAGE PANORÁMICO */
 .collage {
-  overflow-x: hidden; /* ocultamos barras, el scroll será programado */
-  position: relative;
-  width: 100%;
-  height: 384px; /* altura fija igual que las imágenes */
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* para iOS */
+  cursor: grab; /* cambia el cursor para que sea más intuitivo */
+  user-select: none; /* para evitar seleccionar texto al arrastrar */
+  -ms-overflow-style: none; /* IE y Edge: oculta barra de scroll */
+  scrollbar-width: none; /* Firefox: oculta barra de scroll */
 }
-
-.carrusel {
-  display: flex;
-  width: max-content; /* para que el contenedor se ajuste al contenido */
-  user-select: none; /* para evitar selección accidental al arrastrar */
-  cursor: grab;
+.collage::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
 }
 
 .carrusel img {
