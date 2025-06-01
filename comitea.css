@@ -177,24 +177,31 @@ body, html {
 .vestimenta {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   gap: 2rem;
-  padding: 3rem 1rem;
-  flex-wrap: wrap; /* Por si se reduce el ancho en móviles */
-}
-
-.vestimenta .opcion {
+  padding: 2rem;
+  background: #222;
+  flex-wrap: wrap;
   text-align: center;
-  max-height: 150px;
 }
 
-.vestimenta img {
-  width: 100%;
-  max-height: 150px;
+.vestimenta .opcion img {
+  height: 300px; /* Ajusta la altura deseada */
   width: auto;
-  margin-bottom: 1rem;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.vestimenta .opcion p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
 section {
   scroll-margin-top: 60px; /* Ajustalo según la altura real del header */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Ajusta según tu barra de navegación */
 }
