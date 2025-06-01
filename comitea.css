@@ -148,12 +148,14 @@ body, html {
 }
 
 .contenido-invitacion {
-  transform: rotate(-20deg); /* Inclinación sutil */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+  transform: rotate(-4deg); /* Más inclinación */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   max-width: 90%;
+  margin: 0 auto; /* Centrado */
 }
 
 .invitacion-imagen {
+  transform: rotate(1.5deg); /* Inclinación leve de la imagen */
   max-width: 100%;
   height: auto;
   display: block;
@@ -192,11 +194,11 @@ body, html {
 }
 
 .vestimenta .opcion img {
-  height: 80px; /* Ajusta la altura deseada */
+  height: 75px; /* Ajusta la altura deseada */
   width: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .vestimenta .opcion p {
