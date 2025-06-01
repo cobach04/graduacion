@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,6 @@ body, html {
   color: white;
   background: #111;
   overflow-x: hidden;
-  padding-top: 80px; /* altura de la barra de navegación */
 }
 
 /* PORTADA */
@@ -19,29 +18,24 @@ body, html {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  padding-top: 60px;
 }
 
 .video-fondo {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
 }
 
 .capa-negra {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Capa semi-transparente */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 2rem;
 }
@@ -63,15 +57,17 @@ body, html {
 /* NAVEGACIÓN */
 .barra-navegacion {
   background: #222;
-  text-align: center;
   padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .barra-navegacion ul {
-  list-style: none;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  list-style: none;
   flex-wrap: wrap;
 }
 
@@ -79,141 +75,97 @@ body, html {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
 .barra-navegacion a:hover {
   color: #ffd700;
 }
 
-/* COLLAGE PANORÁMICO */
+/* COLLAGE */
 .collage {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* para iOS */
-  cursor: grab; /* cambia el cursor para que sea más intuitivo */
-  user-select: none; /* para evitar seleccionar texto al arrastrar */
-  -ms-overflow-style: none; /* IE y Edge: oculta barra de scroll */
-  scrollbar-width: none; /* Firefox: oculta barra de scroll */
-  height: auto;
-}
-.collage::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
-}
-.carrusel {
-  display: inline-flex;
-  animation: scroll-horizontal 30s linear infinite;
-  width: max-content;
+  background: #000;
+  overflow: hidden;
 }
 
-@keyframes scroll-horizontal {
+.carrusel {
+  display: flex;
+  width: calc(2 * 100%);
+  animation: mover 60s linear infinite;
+}
+
+.carrusel img {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+@keyframes mover {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-.carrusel img {
-  height: 384px; /* o el alto que prefieras */
-  width: auto; /* Mantiene la proporción real */
-  flex-shrink: 0;
-  image-rendering: crisp-edges; /* Para evitar pixelación si es posible */
-}
-
-/* Animación infinita */
-@keyframes deslizar {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-#contador {
-  font-size: 1.5rem;
-  color: white;
-  text-align: center;
-  margin-top: 0.5rem;
-  z-index: 10;
-  position: relative;
 }
 
 /* INVITACIÓN */
 .invitacion-textura {
-  background-image: url('textura-madera.jpg'); /* Cambia por tu textura real */
-  background-size: cover;
-  background-position: center;
-  padding: 4rem 2rem;
+  padding: 2rem;
+  background: #222;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.contenido-invitacion {
-  transform: rotate(-2deg); /* Inclinación sutil */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
-  max-width: 90%;
-}
-
 .invitacion-imagen {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border: 4px solid #fff;
-  border-radius: 12px;
-}
-
-.invitacion {
-  transition: transform 1s ease, opacity 1s ease;
-  transform: rotateY(90deg);
-  opacity: 0;
-}
-
-.invitacion.visible {
-  transform: rotateY(0deg);
-  opacity: 1;
-}
-
-/* Inclinación con scroll */
-.invita
-
-.direccion iframe {
   width: 100%;
-  max-width: 800px;
-  height: 300px;
-  display: block;
-  margin: 0 auto;
-  border: 0;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transform: rotate(-1deg);
+  transition: transform 0.3s;
+}
+.invitacion-imagen:hover {
+  transform: rotate(1deg);
 }
 
+/* DIRECCIÓN */
+.direccion {
+  padding: 2rem;
+  background: #111;
+}
+
+/* VESTIMENTA */
 .vestimenta {
+  padding: 2rem;
+  background: #222;
+  text-align: center;
+}
+.vestimenta h2 {
+  margin-bottom: 1.5rem;
+}
+.vestimenta-contenedor {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
-  background: #222;
   flex-wrap: wrap;
+}
+.vestimenta-item img {
+  max-height: 200px;
+  margin-bottom: 0.5rem;
+}
+
+/* INSTAGRAM */
+.instagram {
   text-align: center;
+  padding: 2rem;
+  background: #000;
+}
+.instagram img {
+  width: 64px;
+  height: 64px;
 }
 
-.vestimenta .opcion img {
-  height: 100px; /* Ajusta la altura deseada */
-  width: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-.vestimenta .opcion p {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-}
-
-section {
-  scroll-margin-top: 60px; /* Ajustalo según la altura real del header */
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 60px; /* Ajusta según tu barra de navegación */
+/* PIE */
+.pie {
+  background: #111;
+  text-align: center;
+  padding: 1rem;
+  color: #aaa;
 }
