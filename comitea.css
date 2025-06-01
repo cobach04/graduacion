@@ -95,6 +95,7 @@ body, html {
   user-select: none; /* para evitar seleccionar texto al arrastrar */
   -ms-overflow-style: none; /* IE y Edge: oculta barra de scroll */
   scrollbar-width: none; /* Firefox: oculta barra de scroll */
+  height: auto;
 }
 .collage::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
@@ -110,10 +111,10 @@ body, html {
   100% { transform: translateX(-50%); }
 }
 .carrusel img {
-  height: 192px; /* o el alto que prefieras */
+  height: 384px; /* o el alto que prefieras */
   width: auto; /* Mantiene la proporción real */
   flex-shrink: 0;
-  image-rendering: auto; /* Para evitar pixelación si es posible */
+  image-rendering: crisp-edges; /* Para evitar pixelación si es posible */
 }
 
 /* Animación infinita */
