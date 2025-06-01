@@ -86,21 +86,24 @@ body, html {
 
 /* COLLAGE PANORÁMICO */
 .collage {
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* para iOS */
+  overflow-x: hidden; /* ocultamos barras, el scroll será programado */
+  position: relative;
+  width: 100%;
+  height: 384px; /* altura fija igual que las imágenes */
 }
 
 .carrusel {
-  display: inline-flex;
+  display: flex;
+  width: max-content; /* para que el contenedor se ajuste al contenido */
+  user-select: none; /* para evitar selección accidental al arrastrar */
+  cursor: grab;
 }
 
 .carrusel img {
-  width: auto;
-  height: 250px; /* o el alto que quieras para el collage */
+  height: 384px; 
+  width: auto; /* mantiene proporción real */
   flex-shrink: 0;
+  image-rendering: auto; /* para evitar pixelado */
 }
 
 /* Animación infinita */
