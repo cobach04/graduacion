@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invitación Graduación 2025</title>
-  <link rel="stylesheet" href="comitea.css" /> <!-- Puedes usar estilo interno si prefieres -->
+  <link rel="stylesheet" href="comitea.css" />
 </head>
 <body>
 
@@ -21,7 +21,7 @@
     </div>
   </section>
 
-  <!-- BARRA DE NAVEGACIÓN (NO FIJA) -->
+  <!-- BARRA DE NAVEGACIÓN -->
   <nav class="barra-navegacion">
     <ul>
       <li><a href="#invitacion">Invitación</a></li>
@@ -32,39 +32,39 @@
   </nav>
 
   <!-- COLLAGE PANORÁMICO INFINITO -->
- <section id="fotos" class="collage">
-  <div class="carrusel" id="carrusel">
-    <img src="collage.jpg" alt="Collage de fotos" />
-    <img src="collage.jpg" alt="Collage duplicado" />
-  </div>
-</section>
-
-<!-- INVITACIÓN CON TEXTURA Y EFECTO DE INCLINACIÓN -->
-<section id="invitacion" class="invitacion-textura">
-  <div class="contenido-invitacion invitacion">
-    <img src="invitacion.jpg" alt="Invitación" class="invitacion-imagen" />
-  </div>
-</section>
-
-  <!-- DIRECCIÓN EN GOOGLE MAPS -->
-  <section id="direccion" class="direccion">
-    <!-- Pegas aquí el iframe que te da Google Maps -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1837.7408466712277!2d-109.94608386130659!3d22.89559739481571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86af4a7e15781061%3A0x305de8afada8747a!2sSalon%20Andares!5e0!3m2!1ses-419!2smx!4v1748814983089!5m2!1ses-419!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <section id="fotos" class="collage">
+    <div class="carrusel">
+      <img src="collage.jpg" alt="Collage de fotos" />
+      <img src="collage.jpg" alt="Collage duplicado" />
+    </div>
   </section>
 
-  <!-- CÓDIGO DE VESTIMENTA -->
-<div class="carousel-item active">
-  <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
-    <div style="text-align: center;">
-      <img src="formalhombre.png" alt="Caballeros" style="max-height: 200px;" />
-      <p>Formal para caballeros</p>
+  <!-- INVITACIÓN -->
+  <section id="invitacion" class="invitacion-textura">
+    <div class="contenido-invitacion invitacion">
+      <img src="invitacion.jpg" alt="Invitación" class="invitacion-imagen" />
     </div>
-    <div style="text-align: center;">
-      <img src="formaldama.png" alt="Damas" style="max-height: 200px;" />
-      <p>Formal para damas</p>
+  </section>
+
+  <!-- DIRECCIÓN -->
+  <section id="direccion" class="direccion">
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- VESTIMENTA -->
+  <section id="vestimenta" class="vestimenta">
+    <h2>Código de vestimenta</h2>
+    <div class="vestimenta-contenedor">
+      <div class="vestimenta-item">
+        <img src="formalhombre.png" alt="Caballeros" />
+        <p>Formal para caballeros</p>
+      </div>
+      <div class="vestimenta-item">
+        <img src="formaldama.png" alt="Damas" />
+        <p>Formal para damas</p>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
   <!-- INSTAGRAM -->
   <section id="instagram" class="instagram">
@@ -74,117 +74,36 @@
     <p>@tu_usuario</p>
   </section>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- PIE -->
   <footer class="pie">
     <p>Con mucho cariño, generación 2025 🎓</p>
   </footer>
 
-  <!-- JS PARA CONTADOR -->
-<script>
-  const eventoFecha = new Date("2025-06-06T19:00:00-07:00");
-  const contador = document.getElementById("contador");
+  <!-- JS -->
+  <script>
+    const eventoFecha = new Date("2025-06-06T19:00:00-07:00");
+    const contador = document.getElementById("contador");
 
-  function actualizarContador() {
-    const ahora = new Date();
-    const diferencia = eventoFecha - ahora;
+    function actualizarContador() {
+      const ahora = new Date();
+      const diferencia = eventoFecha - ahora;
 
-    if (diferencia <= 0) {
-      contador.textContent = "🎓 ¡Es el gran día!";
-      return;
-    }
-
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-    const segundos = Math.floor((diferencia / 1000) % 60);
-
-    contador.textContent = `Faltan ${dias} días, ${horas}h ${minutos}m ${segundos}s 🎉`;
-  }
-
-  actualizarContador(); // Mostrar inmediatamente
-  setInterval(actualizarContador, 1000); // Actualizar cada segundo
-
-const carrusel = document.getElementById("carrusel");
-
-let isDragging = false;
-let startX;
-let scrollLeft;
-
-const autoScrollSpeed = 0.5;
-
-carrusel.innerHTML += carrusel.innerHTML; // Duplica contenido para loop
-
-  
-function autoScroll() {
-  if (!isDragging) {
-    carrusel.scrollLeft += autoScrollSpeed;
-    if (carrusel.scrollLeft >= carrusel.scrollWidth / 2) {
-      carrusel.scrollLeft = 0;
-    }
-  }
-  requestAnimationFrame(autoScroll);
-}
-
-autoScroll();
-
-carrusel.style.cursor = 'grab';
-
-carrusel.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  startX = e.pageX - carrusel.offsetLeft;
-  scrollLeft = carrusel.scrollLeft;
-  carrusel.style.cursor = 'grabbing';
-});
-
-carrusel.addEventListener('mouseleave', () => {
-  isDragging = false;
-  carrusel.style.cursor = 'grab';
-});
-
-carrusel.addEventListener('mouseup', () => {
-  isDragging = false;
-  carrusel.style.cursor = 'grab';
-});
-
-carrusel.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  e.preventDefault();
-  const x = e.pageX - carrusel.offsetLeft;
-  const walk = (x - startX) * 2; // sensibilidad
-  carrusel.scrollLeft = scrollLeft - walk;
-});
-
-// Touch support
-carrusel.addEventListener('touchstart', (e) => {
-  isDragging = true;
-  startX = e.touches[0].pageX - carrusel.offsetLeft;
-  scrollLeft = carrusel.scrollLeft;
-});
-
-carrusel.addEventListener('touchend', () => {
-  isDragging = false;
-});
-
-carrusel.addEventListener('touchmove', (e) => {
-  if (!isDragging) return;
-  const x = e.touches[0].pageX - carrusel.offsetLeft;
-  const walk = (x - startX) * 2;
-  carrusel.scrollLeft = scrollLeft - walk;
-});
-
-  
- const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+      if (diferencia <= 0) {
+        contador.textContent = "🎓 ¡Es el gran día!";
+        return;
       }
-    });
-  });
 
-  document.querySelectorAll('.invitacion').forEach(elem => {
-    observer.observe(elem);
-  });
-</script>
+      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+      const segundos = Math.floor((diferencia / 1000) % 60);
+
+      contador.textContent = `Faltan ${dias} días, ${horas}h ${minutos}m ${segundos}s 🎉`;
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+  </script>
 
 </body>
 </html>
