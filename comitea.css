@@ -163,3 +163,33 @@ body, html {
 
 /* Inclinación con scroll */
 .invita
+
+.direccion iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+}
+
+.vestimenta {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  flex-wrap: wrap; /* Por si se reduce el ancho en móviles */
+}
+
+.vestimenta .opcion {
+  text-align: center;
+  max-width: 200px;
+}
+
+.vestimenta img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+}
