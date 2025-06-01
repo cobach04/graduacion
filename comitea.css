@@ -10,6 +10,7 @@ body, html {
   color: white;
   background: #111;
   overflow-x: hidden;
+  padding-top: 80px; /* altura de la barra de navegación */
 }
 
 /* PORTADA */
