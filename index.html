@@ -104,6 +104,71 @@
 
   actualizarContador(); // Mostrar inmediatamente
   setInterval(actualizarContador, 1000); // Actualizar cada segundo
+
+  const carrusel = document.getElementById("carrusel");
+
+let isDragging = false;
+let startX;
+let scrollLeft;
+
+// Velocidad del scroll automático (pixeles por frame)
+const autoScrollSpeed = 0.5;
+
+// Duplicar el contenido para loop infinito visual
+carrusel.innerHTML += carrusel.innerHTML;
+
+function autoScroll() {
+  if (!isDragging) {
+    carrusel.scrollLeft += autoScrollSpeed;
+    // Si llegamos a la mitad (que es el final del contenido original), reiniciamos
+    if (carrusel.scrollLeft >= carrusel.scrollWidth / 2) {
+      carrusel.scrollLeft = 0;
+    }
+  }
+  requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+
+// Eventos para drag con mouse o táctil
+carrusel.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.pageX - carrusel.offsetLeft;
+  scrollLeft = carrusel.scrollLeft;
+  carrusel.style.cursor = 'grabbing';
+});
+carrusel.addEventListener('mouseleave', () => {
+  isDragging = false;
+  carrusel.style.cursor = 'grab';
+});
+carrusel.addEventListener('mouseup', () => {
+  isDragging = false;
+  carrusel.style.cursor = 'grab';
+});
+carrusel.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - carrusel.offsetLeft;
+  const walk = (x - startX) * 2; // multiplicar para más sensibilidad
+  carrusel.scrollLeft = scrollLeft - walk;
+});
+
+// Para touch devices (móviles/tablets)
+carrusel.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].pageX - carrusel.offsetLeft;
+  scrollLeft = carrusel.scrollLeft;
+});
+carrusel.addEventListener('touchend', () => {
+  isDragging = false;
+});
+carrusel.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].pageX - carrusel.offsetLeft;
+  const walk = (x - startX) * 2;
+  carrusel.scrollLeft = scrollLeft - walk;
+});
+
 </script>
 
 </body>
