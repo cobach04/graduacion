@@ -41,7 +41,7 @@
 
 <!-- INVITACIÓN CON TEXTURA Y EFECTO DE INCLINACIÓN -->
 <section id="invitacion" class="invitacion-textura">
-  <div class="contenido-invitacion">
+  <div class="contenido-invitacion invitacion">
     <img src="invitacion.jpg" alt="Invitación" class="invitacion-imagen" />
   </div>
 </section>
@@ -53,16 +53,18 @@
   </section>
 
   <!-- CÓDIGO DE VESTIMENTA -->
-<section id="vestimenta" class="vestimenta">
-  <div class="opcion">
-    <img src="traje.png" alt="Hombres" />
-    <p>Formal para caballeros</p>
+<div class="carousel-item active">
+  <div style="display: flex; justify-content: center; gap: 2rem; align-items: center;">
+    <div style="text-align: center;">
+      <img src="formalhombre.png" alt="Caballeros" style="max-height: 200px;" />
+      <p>Formal para caballeros</p>
+    </div>
+    <div style="text-align: center;">
+      <img src="formaldama.png" alt="Damas" style="max-height: 200px;" />
+      <p>Formal para damas</p>
+    </div>
   </div>
-  <div class="opcion">
-    <img src="vestido.png" alt="Mujeres" />
-    <p>Formal para damas</p>
-  </div>
-</section>
+</div>
 
   <!-- INSTAGRAM -->
   <section id="instagram" class="instagram">
@@ -112,6 +114,7 @@ const autoScrollSpeed = 0.5;
 
 carrusel.innerHTML += carrusel.innerHTML; // Duplica contenido para loop
 
+  
 function autoScroll() {
   if (!isDragging) {
     carrusel.scrollLeft += autoScrollSpeed;
@@ -168,6 +171,19 @@ carrusel.addEventListener('touchmove', (e) => {
   const walk = (x - startX) * 2;
   carrusel.scrollLeft = scrollLeft - walk;
 });
+
+  
+ const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.invitacion').forEach(elem => {
+    observer.observe(elem);
+  });
 </script>
 
 </body>
