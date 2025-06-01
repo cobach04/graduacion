@@ -2,108 +2,99 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invitación Graduación 2025</title>
-  <link rel="stylesheet" href="comitea.css" />
-</head>
-<body>
-
-  <!-- PORTADA con video fondo -->
-  <section class="portada">
-    <video autoplay muted loop playsinline class="video-fondo">
-      <source src="tu-video.mp4" type="video/mp4" />
-      Tu navegador no soporta el video.
-    </video>
-    <div class="capa-negra">
-      <h1>Graduación 2025</h1>
-      <div id="contador"></div>
-      <p class="descripcion">📍 Jardín Quinta Andares, 06 de junio de 2025, 7:00 P. M.</p>
-    </div>
-  </section>
-
-  <!-- BARRA DE NAVEGACIÓN -->
-  <nav class="barra-navegacion">
-    <ul>
-      <li><a href="#invitacion">Invitación</a></li>
-      <li><a href="#direccion">Dirección</a></li>
-      <li><a href="#vestimenta">Vestimenta</a></li>
-      <li><a href="#instagram">Instagram</a></li>
-    </ul>
-  </nav>
-
-  <!-- COLLAGE PANORÁMICO INFINITO -->
-  <section id="fotos" class="collage">
-    <div class="carrusel">
-      <img src="collage.jpg" alt="Collage de fotos" />
-      <img src="collage.jpg" alt="Collage duplicado" />
-    </div>
-  </section>
-
-  <!-- INVITACIÓN -->
-  <section id="invitacion" class="invitacion-textura">
-    <div class="contenido-invitacion invitacion">
-      <img src="invitacion.jpg" alt="Invitación" class="invitacion-imagen" />
-    </div>
-  </section>
-
-  <!-- DIRECCIÓN -->
-  <section id="direccion" class="direccion">
-    <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <!-- VESTIMENTA -->
-  <section id="vestimenta" class="vestimenta">
-    <h2>Código de vestimenta</h2>
-    <div class="vestimenta-contenedor">
-      <div class="vestimenta-item">
-        <img src="formalhombre.png" alt="Caballeros" />
-        <p>Formal para caballeros</p>
-      </div>
-      <div class="vestimenta-item">
-        <img src="formaldama.png" alt="Damas" />
-        <p>Formal para damas</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <section id="instagram" class="instagram">
-    <a href="https://www.instagram.com/tu_usuario" target="_blank">
-      <img src="instagram-logo.png" alt="Instagram" />
-    </a>
-    <p>@tu_usuario</p>
-  </section>
-
-  <!-- PIE -->
-  <footer class="pie">
-    <p>Con mucho cariño, generación 2025 🎓</p>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    const eventoFecha = new Date("2025-06-06T19:00:00-07:00");
-    const contador = document.getElementById("contador");
-
-    function actualizarContador() {
-      const ahora = new Date();
-      const diferencia = eventoFecha - ahora;
-
-      if (diferencia <= 0) {
-        contador.textContent = "🎓 ¡Es el gran día!";
-        return;
-      }
-
-      const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-      const segundos = Math.floor((diferencia / 1000) % 60);
-
-      contador.textContent = `Faltan ${dias} días, ${horas}h ${minutos}m ${segundos}s 🎉`;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitación</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("fondo-madera2.jpg");
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
     }
 
-    actualizarContador();
-    setInterval(actualizarContador, 1000);
-  </script>
+    .contenedor {
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
+    .titulo {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .collage {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 20px auto;
+    }
+
+    .texto {
+      font-size: 1.2em;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .codigo-vestimenta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .codigo-vestimenta img {
+      width: 100px;
+      height: auto;
+    }
+
+    .confirmacion {
+      text-align: center;
+      font-size: 1em;
+    }
+
+    @media (max-width: 600px) {
+      .titulo {
+        font-size: 2em;
+      }
+
+      .texto {
+        font-size: 1em;
+        padding: 0 10px;
+      }
+
+      .codigo-vestimenta img {
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1 class="titulo">¡Estás invitado!</h1>
+
+    <img class="collage" src="collage.jpg" alt="Collage de fotos" />
+
+    <p class="texto">
+      Acompáñanos a celebrar este momento especial con una reunión inolvidable. Habrá comida, música, y muchas sorpresas más.
+    </p>
+
+    <div class="codigo-vestimenta">
+      <img src="formal1.jpg" alt="Ejemplo de vestimenta formal 1" />
+      <img src="formal2.jpg" alt="Ejemplo de vestimenta formal 2" />
+    </div>
+
+    <p class="confirmacion">
+      Por favor confirma tu asistencia antes del 10 de junio.
+    </p>
+  </div>
 </body>
 </html>
