@@ -11,6 +11,9 @@ body, html {
   background: #111;
   overflow-x: hidden;
 }
+h1 {
+  text-align: center
+}
 
 /* PORTADA */
 .portada {
@@ -176,7 +179,7 @@ body, html {
 
 .direccion iframe {
   width: 100%;
-  max-width: 800px;
+  max-width: 100vw;
   height: 300px;
   display: block;
   margin: 0 auto;
@@ -194,11 +197,11 @@ body, html {
 }
 
 .vestimenta .opcion img {
-  height: 75px; /* Ajusta la altura deseada */
+  height: 60px; /* Ajusta la altura deseada */
   width: auto;
   object-fit: contain;
   display: block;
-  margin: 1rem auto;
+  margin: 3rem auto;
 }
 
 .vestimenta .opcion p {
