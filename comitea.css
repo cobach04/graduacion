@@ -99,7 +99,16 @@ body, html {
 .collage::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
 }
+.carrusel {
+  display: inline-flex;
+  animation: scroll-horizontal 30s linear infinite;
+  width: max-content;
+}
 
+@keyframes scroll-horizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 .carrusel img {
   height: 384px; /* o el alto que prefieras */
   width: auto; /* Mantiene la proporción real */
