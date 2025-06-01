@@ -185,7 +185,7 @@ body, html {
 }
 
 .vestimenta .opcion img {
-  height: 300px; /* Ajusta la altura deseada */
+  height: 150px; /* Ajusta la altura deseada */
   width: auto;
   object-fit: contain;
   display: block;
