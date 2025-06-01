@@ -86,16 +86,16 @@ body, html {
 
 /* COLLAGE PANORÁMICO */
 .collage {
+  height: 384px; /* Establece altura fija */
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* para iOS */
-  cursor: grab; /* cambia el cursor para que sea más intuitivo */
-  user-select: none; /* para evitar seleccionar texto al arrastrar */
-  -ms-overflow-style: none; /* IE y Edge: oculta barra de scroll */
-  scrollbar-width: none; /* Firefox: oculta barra de scroll */
-  height: 384px;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .collage::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
