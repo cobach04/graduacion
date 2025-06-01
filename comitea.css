@@ -19,7 +19,6 @@ body, html {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  padding-top: 60px;
 }
 
 .video-fondo {
@@ -97,7 +96,7 @@ body, html {
   user-select: none; /* para evitar seleccionar texto al arrastrar */
   -ms-overflow-style: none; /* IE y Edge: oculta barra de scroll */
   scrollbar-width: none; /* Firefox: oculta barra de scroll */
-  height: auto;
+  height: 384px;
 }
 .collage::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
@@ -150,7 +149,7 @@ body, html {
 }
 
 .contenido-invitacion {
-  transform: rotate(-2deg); /* Inclinación sutil */
+  transform: rotate(-20deg); /* Inclinación sutil */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
   max-width: 90%;
 }
