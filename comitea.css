@@ -86,20 +86,21 @@ body, html {
 
 /* COLLAGE PANORÁMICO */
 .collage {
-  overflow: hidden;
-  background: #000;
-  height: 384px;
-  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* para iOS */
 }
 
 .carrusel {
-  display: flex;
-  animation: deslizar 30s linear infinite;
+  display: inline-flex;
 }
 
 .carrusel img {
-  height: 100%;
   width: auto;
+  height: 250px; /* o el alto que quieras para el collage */
+  flex-shrink: 0;
 }
 
 /* Animación infinita */
