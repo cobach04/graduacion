@@ -163,6 +163,17 @@ body, html {
   border-radius: 12px;
 }
 
+.invitacion {
+  transition: transform 1s ease, opacity 1s ease;
+  transform: rotateY(90deg);
+  opacity: 0;
+}
+
+.invitacion.visible {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
 /* Inclinación con scroll */
 .invita
 
