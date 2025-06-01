@@ -10,7 +10,6 @@ body, html {
   color: white;
   background: #111;
   overflow-x: hidden;
-  padding-top: 80px; /* altura de la barra de navegación */
 }
 
 /* PORTADA */
@@ -163,7 +162,7 @@ body, html {
 }
 
 .invitacion {
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 2s ease, opacity 2s ease;
   transform: rotateY(90deg);
   opacity: 0;
 }
@@ -172,9 +171,6 @@ body, html {
   transform: rotateY(0deg);
   opacity: 1;
 }
-
-/* Inclinación con scroll */
-.invita
 
 .direccion iframe {
   width: 100%;
@@ -196,7 +192,7 @@ body, html {
 }
 
 .vestimenta .opcion img {
-  height: 100px; /* Ajusta la altura deseada */
+  height: 80px; /* Ajusta la altura deseada */
   width: auto;
   object-fit: contain;
   display: block;
