@@ -185,12 +185,16 @@ body, html {
 
 .vestimenta .opcion {
   text-align: center;
-  max-height: 200px;
+  max-height: 150px;
 }
 
 .vestimenta img {
   width: 100%;
-  max-height: 200px;
+  max-height: 150px;
   width: auto;
   margin-bottom: 1rem;
+}
+
+section {
+  scroll-margin-top: 60px; /* Ajustalo según la altura real del header */
 }
