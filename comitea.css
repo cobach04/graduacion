@@ -137,24 +137,28 @@ body, html {
 }
 
 /* INVITACIÓN */
-.fondo-textura {
-  background-image: url('fondo-madera.jpg');
+.invitacion-textura {
+  background-image: url('textura-madera.jpg'); /* Cambia por tu textura real */
   background-size: cover;
   background-position: center;
-  padding: 4rem 1rem;
+  padding: 4rem 2rem;
   display: flex;
   justify-content: center;
-  perspective: 1000px;
+  align-items: center;
 }
 
-.carta-invitacion {
-  transition: transform 0.3s ease;
+.contenido-invitacion {
+  transform: rotate(-2deg); /* Inclinación sutil */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra para destacar */
+  max-width: 90%;
 }
 
-.carta-invitacion img {
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+.invitacion-imagen {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 4px solid #fff;
+  border-radius: 12px;
 }
 
 /* Inclinación con scroll */
