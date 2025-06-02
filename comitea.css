@@ -211,6 +211,7 @@ h1 {
   text-align: center;
   justify-content: center;
   height: 60px
+  margin-top: 1rem;
 }
 
 .vestimenta .opcion img {
@@ -227,6 +228,7 @@ h1 {
 }
 .instagram {
   text-align: center;
+  margin-top: 2rem;
 }
 
 .instagram img {
@@ -240,36 +242,6 @@ h1 {
   background-color: #111;
   z-index: 1;
   position: relative;
-}
-
-.vestimenta {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.vestimenta img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-#instagram {
-  padding: 3rem 1rem;
-  background-color: #111;
-  text-align: center;
-  position: relative;
-  z-index: 0;
-  margin-top: 2rem; /* Separación del bloque anterior */
-}
-
-#instagram img {
-  max-width: 150px;
-  height: auto;
-  margin-bottom: 1rem;
 }
   
 section {
