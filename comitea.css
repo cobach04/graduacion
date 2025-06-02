@@ -211,10 +211,13 @@ h1 {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
+.instagram {
+  text-align: center;
+}
+
 .instagram img {
   width: 80vw;
   height: auto;
-  text-align: center;
 }
   
 section {
