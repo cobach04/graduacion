@@ -206,8 +206,9 @@ h1 {
   justify-content: center;
   gap: 2rem;
   background: #222;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* ❗ Fuerza que siempre estén en una sola línea */
   text-align: center;
+  overflow-x: auto;
 }
 
 .vestimenta .opcion {
