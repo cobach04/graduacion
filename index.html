@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- PORTADA con video fondo -->
   <section class="portada">
     <video autoplay muted loop playsinline class="video-fondo">
       <source src="tu-video.mp4" type="video/mp4" />
@@ -21,7 +20,6 @@
     </div>
   </section>
 
-  <!-- BARRA DE NAVEGACIÓN (NO FIJA) -->
   <nav class="barra-navegacion">
     <ul>
       <li><a href="#invitacion">Invitación</a></li>
@@ -30,39 +28,39 @@
     </ul>
   </nav>
 
-  <!-- COLLAGE PANORÁMICO INFINITO -->
- <section id="fotos" class="collage">
+ <div class="collage">
   <div class="carrusel" id="carrusel">
     <img src="collage.jpg" alt="Collage de fotos" />
     <img src="collage.jpg" alt="Collage duplicado" />
   </div>
-</section>
+</div>
 
-<!-- INVITACIÓN CON TEXTURA Y EFECTO DE INCLINACIÓN -->
 <section id="invitacion" class="invitacion-textura">
   <div class="contenido-invitacion invitacion">
     <img src="invitacion.jpg" alt="Invitación" class="invitacion-imagen" />
   </div>
 </section>
 
-  <!-- DIRECCIÓN EN GOOGLE MAPS -->
   <section id="direccion" class="direccion">
     <h1>Ubicación</h1>
     <!-- Pegas aquí el iframe que te da Google Maps -->
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1837.7408466712277!2d-109.94608386130659!3d22.89559739481571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86af4a7e15781061%3A0x305de8afada8747a!2sSalon%20Andares!5e0!3m2!1ses-419!2smx!4v1748814983089!5m2!1ses-419!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
 
-  <!-- CÓDIGO DE VESTIMENTA -->
 <section id="vestimenta" class="code">
   <h1>Código de Vestimenta</h1>
   <div class="vestimenta">
-    <div style="text-align: center;">
-      <img src="traje.png" alt="Caballeros" style="height: 60px" />
-      <p>Formal para caballeros</p>
+    <div class="opcion">
+      <div style="text-align: center;">
+        <img src="traje.png" alt="Caballeros" style="height: 60px" />
+        <p>Formal para caballeros</p>
+      </div>
     </div>
-    <div style="text-align: center;">
+    <div class="opcion">
+      <div style="text-align: center;">
       <img src="vestido.png" alt="Damas" style="height: 60px" />
       <p>Formal para damas</p>
+      </div>
     </div>
   </div>
 <br>
