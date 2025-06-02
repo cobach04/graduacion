@@ -208,7 +208,12 @@ h1 {
   margin-top: 0.5rem;
   font-size: 1rem;
 }
-
+.instagram img {
+  width: 80vw;
+  heighr: auto;
+  align: center;
+}
+  
 section {
   scroll-margin-top: 60px; /* Ajustalo según la altura real del header */
 }
