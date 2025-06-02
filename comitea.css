@@ -208,13 +208,18 @@ h1 {
   background: #222;
   flex-wrap: wrap;
   text-align: center;
-  justify-content: center;
-  height: 60px;
   margin-top: 1rem;
+  padding: 1rem;
+}
+
+.vestimenta .opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .vestimenta .opcion img {
-  height: 60px; /* Ajusta la altura deseada */
+  height: 60px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -223,7 +228,18 @@ h1 {
 .vestimenta .opcion p {
   margin-top: 0.5rem;
   font-size: 1rem;
+  color: white;
 }
+
+.code {
+  padding: 2rem;
+  text-align: center;
+  background-color: #111;
+  z-index: 1;
+  position: relative;
+  /* quita height: 60px */
+}
+
 .instagram {
   text-align: center;
   margin-top: 2rem;
