@@ -13,7 +13,7 @@ body, html {
   overflow-x: hidden;
 }
 h1 {
-  text-align: center
+  text-align: center;
   font-family: "Brush Script MT", cursive;
   font-size: 2rem;
 }
@@ -213,8 +213,8 @@ h1 {
 }
 .instagram img {
   width: 80vw;
-  heighr: auto;
-  align: center;
+  height: auto;
+  text-align: center;
 }
   
 section {
