@@ -217,10 +217,12 @@ h1 {
 }
 
 .vestimenta .opcion img {
-  height: 150px;
+  height: 300px;
   width: auto;
   object-fit: contain;
   display: block;
+  justify-content: center;
+  text-align: center;
 }
 
 .vestimenta .opcion p {
