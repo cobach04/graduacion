@@ -6,7 +6,7 @@
 }
 
 body, html {
-  font-family: "Segoe UI", sans-serif, "Times New Roman", cursive;
+  font-family: "Times New Roman", sans-serif, "Brush Script MT", cursive;
   color: white;
   background: #111;
   overflow-x: hidden;
@@ -14,7 +14,7 @@ body, html {
 h1 {
   align-items: center;
   text-align: center;
-  font-family: "Times New Roman", cursive;
+  font-family: "Brush Script MT", cursive;
   font-size: 2rem;
   padding: 5vw;
 }
@@ -228,6 +228,7 @@ h1 {
 }
 
 .vestimenta .opcion p {
+  font-family: "Times New Roman";
   margin-top: 0.5rem;
   font-size: 1rem;
   color: white;
