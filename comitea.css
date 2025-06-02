@@ -22,6 +22,7 @@ h1 {
 .pie {
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 /* PORTADA */
@@ -148,13 +149,6 @@ h1 {
   position: relative;
 }
 
-.vestimenta {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  align-items: center;
-  text-align: center;
-}
 .code {
   align-items: center;
   text-align: center;
@@ -215,6 +209,7 @@ h1 {
   background: #222;
   flex-wrap: wrap;
   text-align: center;
+  justify-content: center;
 }
 
 .vestimenta .opcion img {
@@ -222,7 +217,7 @@ h1 {
   width: auto;
   object-fit: contain;
   display: block;
-  margin: 3rem auto;
+  margin: 4rem auto;
 }
 
 .vestimenta .opcion p {
