@@ -208,8 +208,6 @@ h1 {
   background: #222;
   flex-wrap: wrap;
   text-align: center;
-  margin-top: 1rem;
-  padding: 1rem;
 }
 
 .vestimenta .opcion {
@@ -219,7 +217,7 @@ h1 {
 }
 
 .vestimenta .opcion img {
-  height: 60px;
+  height: 150px;
   width: auto;
   object-fit: contain;
   display: block;
