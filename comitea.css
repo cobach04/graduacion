@@ -1,3 +1,31 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Segoe UI", sans-serif, "Brush Script MT", cursive;
+  color: white;
+  background: #111;
+  overflow-x: hidden;
+}
+h1 {
+  align-items: center;
+  text-align: center;
+  font-family: "Brush Script MT", cursive;
+  font-size: 2rem;
+  padding: 5vw;
+}
+
+.pie {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* PORTADA */
 .portada {
   position: relative;
   height: 100vh;
@@ -20,7 +48,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5); /* Capa semi-transparente */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,6 +71,7 @@
   font-size: 1.2rem;
 }
 
+/* NAVEGACIÓN */
 .barra-navegacion {
   background: #222;
   text-align: center;
@@ -68,8 +97,9 @@
   color: #ffd700;
 }
 
+/* COLLAGE PANORÁMICO */
 .collage {
-  height: 384px;
+  height: 384px; /* Establece altura fija */
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
@@ -80,11 +110,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
 .collage::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome, Safari, Opera: oculta barra de scroll */
 }
-
 .carrusel {
   display: inline-flex;
   animation: scroll-horizontal 30s linear infinite;
@@ -95,93 +123,131 @@
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
-
 .carrusel img {
-  height: 384px;
-  width: auto;
+  height: 384px; /* o el alto que prefieras */
+  width: auto; /* Mantiene la proporción real */
   flex-shrink: 0;
-  image-rendering: crisp-edges;
+  image-rendering: crisp-edges; /* Para evitar pixelación si es posible */
 }
 
-.invitacion-textura {
-  background: url('textura.jpg') repeat;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+/* Animación infinita */
+@keyframes deslizar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.contenido-invitacion {
-  transition: transform 0.6s ease;
-}
-
-.invitacion.visible .contenido-invitacion {
-  transform: rotateY(0deg);
-}
-
-.invitacion-imagen {
-  width: 90%;
-  max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.direccion {
-  padding: 2rem;
+#contador {
+  font-size: 1.5rem;
+  color: white;
   text-align: center;
+  margin-top: 0.5rem;
+  z-index: 10;
+  position: relative;
 }
 
 .code {
-  padding: 2rem;
+  align-items: center;
   text-align: center;
+}
+
+/* INVITACIÓN */
+.invitacion-textura {
+  background-image: url('textura-madera.jpg'); /* Cambia por tu textura real */
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-invitacion {
+  transform: rotate(-4deg); /* Más inclinación */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  margin: 0 auto; /* Centrado */
+}
+
+.invitacion-imagen {
+  transform: rotate(1.5deg); /* Inclinación leve de la imagen */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 4px solid #fff;
+  border-radius: 12px;
+}
+
+.invitacion {
+  transition: transform 2s ease, opacity 2s ease;
+  transform: rotateY(90deg);
+  opacity: 0;
+}
+
+.invitacion.visible {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+
+.direccion iframe {
+  width: 100%;
+  max-width: 100vw;
+  height: 300px;
+  display: block;
+  margin: 0 auto;
+  border: 0;
 }
 
 .vestimenta {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  background: #222;
   flex-wrap: wrap;
-}
-
-.vestimenta img {
-  height: 60px;
-}
-
-.instagram {
-  padding: 2rem;
   text-align: center;
+  justify-content: center;
+  height: 60px;
+  margin-top: 1rem;
+}
+
+.vestimenta .opcion img {
+  height: 60px; /* Ajusta la altura deseada */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.vestimenta .opcion p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+.instagram {
+  text-align: center;
+  margin-top: 2rem;
 }
 
 .instagram img {
+  width: 80vw;
+  height: auto;
+}
+
+.code {
+  padding: 2rem;
+  text-align: center;
+  background-color: #111;
+  z-index: 1;
+  position: relative;
   height: 60px;
-  margin: 1rem 0;
+}
+  
+section {
+  scroll-margin-top: 60px; /* Ajustalo según la altura real del header */
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
-  font-family: "Segoe UI", sans-serif, "Brush Script MT", cursive;
-  color: white;
-  background: #111;
-  overflow-x: hidden;
-}
-
-h1 {
-  align-items: center;
-  text-align: center;
-  font-family: "Brush Script MT", cursive;
-  font-size: 2rem;
-  padding: 5vw;
-}
-
-.pie {
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Ajusta según tu barra de navegación */
 }
