@@ -243,6 +243,26 @@ h1 {
   /* quita height: 60px */
 }
 
+.emi {
+  background-color: white;
+  color: a;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.emi:hover {
+  background-color: a;
+  color: white;
+}
+
+.emi:active {
+  transform: scale(0.96);
+}
+
 .instagram {
   text-align: center;
   margin-top: 2rem;
