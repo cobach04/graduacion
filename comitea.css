@@ -245,17 +245,18 @@ h1 {
 
 .emi {
   background-color: white;
-  color: a;
+  color: black;
   border: 2px solid black;
   border-radius: 12px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .emi:hover {
-  background-color: a;
+  background-color: black;
   color: white;
 }
 
